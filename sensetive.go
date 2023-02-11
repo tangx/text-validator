@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 	"github.com/importcjj/sensitive"
@@ -11,6 +12,12 @@ var fileter *sensitive.Filter
 
 func InitValidator(dict string) {
 	fileter = sensitive.New()
+
+	if strings.HasPrefix(dict, "http") || strings.HasPrefix(dict, "https") {
+		fileter.LoadNetWordDict(dict)
+		return
+	}
+
 	fileter.LoadWordDict(dict)
 }
 
