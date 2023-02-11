@@ -5,6 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
+	"github.com/tangx/srv-sensetive-text/pkg/version"
 )
 
 func main() {
@@ -29,7 +30,8 @@ func httpserve(port int) {
 }
 
 var root = &cobra.Command{
-	Use: "validator",
+	Use:   "validator",
+	Short: fmt.Sprintf("version: %s", version.Version),
 	Run: func(cmd *cobra.Command, args []string) {
 		InitValidator(dict)
 		httpserve(port)
