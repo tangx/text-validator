@@ -7,8 +7,11 @@ Validate the text whether legal or not
 ### Startup
 
 ```bash
-./validator --port 19999 --dict=https://example.com/dict.txt
-./validator --port 19999 --dict=./dict
+$ ./validator --port 19999 --dict=https://example.com/dict.txt
+
+# or
+
+$ ./validator --port 19999 --dict=./dict
 ```
 
 ### Request
