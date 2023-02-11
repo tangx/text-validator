@@ -1,0 +1,8 @@
+
+### GET
+http://127.0.0.1:8081/validate/text?query=qqq
+
+
+### GET
+https://www.baidu.com
+
